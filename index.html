@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -6,7 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Portfólio Thomas</title>
+<title>Portfólio Thomas Chauar</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -17,7 +18,6 @@ margin:0;
 font-family:Arial, Helvetica, sans-serif;
 background:#020617;
 color:white;
-transition:0.4s;
 }
 
 /* NAVBAR */
@@ -27,66 +27,78 @@ position:fixed;
 top:0;
 width:100%;
 display:flex;
-justify-content:center;
-gap:40px;
-padding:18px;
-backdrop-filter:blur(10px);
-background:rgba(2,6,23,0.7);
+justify-content:space-between;
+align-items:center;
+padding:15px 30px;
+background:rgba(2,6,23,0.9);
 z-index:1000;
 }
 
-.navbar a{
+.logo{
+font-weight:bold;
+font-size:20px;
+}
+
+.nav-links{
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
 color:white;
 text-decoration:none;
 font-weight:bold;
 cursor:pointer;
-transition:0.3s;
 }
 
-.navbar a:hover{
-color:#38bdf8;
-}
-
-#temaBtn{
-background:none;
-border:none;
-color:white;
-font-size:18px;
+.menu-toggle{
+display:none;
+font-size:22px;
 cursor:pointer;
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+.nav-links{
+position:absolute;
+top:60px;
+right:0;
+background:#020617;
+flex-direction:column;
+width:200px;
+padding:20px;
+display:none;
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.menu-toggle{
+display:block;
+}
+
 }
 
 /* HEADER */
 
 header{
-padding-top:140px;
+padding-top:120px;
 text-align:center;
 }
 
-.foto{
-width:150px;
-border-radius:50%;
-border:4px solid #38bdf8;
-}
-
 h1{
-font-size:42px;
-margin:10px 0;
+font-size:40px;
 }
 
-/* SECTIONS */
+/* SEÇÕES */
 
 section{
 padding:100px 20px;
 max-width:900px;
 margin:auto;
-opacity:0;
-transform:translateY(40px);
-transition:1s;
-}
-
-section.show{
-opacity:1;
-transform:translateY(0);
 }
 
 /* PROJETOS */
@@ -94,27 +106,26 @@ transform:translateY(0);
 .container{
 display:flex;
 flex-wrap:wrap;
-gap:25px;
+gap:20px;
 justify-content:center;
 }
 
 .card{
 background:#1e293b;
 padding:30px;
+border-radius:10px;
 width:250px;
-border-radius:15px;
-transition:0.4s;
+transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-10px);
-box-shadow:0 20px 40px rgba(0,0,0,0.5);
+transform:translateY(-5px);
 }
 
 /* SKILLS */
 
 .skill{
-margin:25px 0;
+margin:20px 0;
 }
 
 .barra{
@@ -125,9 +136,7 @@ overflow:hidden;
 
 .progresso{
 height:12px;
-width:0;
-background:linear-gradient(90deg,#38bdf8,#22c55e);
-transition:2s;
+background:#38bdf8;
 }
 
 /* CONTATO */
@@ -147,15 +156,14 @@ transition:0.3s;
 
 .icones a:hover{
 color:#38bdf8;
-transform:scale(1.2);
 }
 
 /* BOTÃO WHATSAPP */
 
 .whatsapp{
 position:fixed;
-bottom:30px;
-right:30px;
+bottom:25px;
+right:25px;
 background:#25D366;
 width:60px;
 height:60px;
@@ -165,33 +173,18 @@ align-items:center;
 justify-content:center;
 font-size:30px;
 color:white;
+text-decoration:none;
 }
 
-/* LIGHT MODE */
-
-.light{
-background:#f1f5f9;
-color:#020617;
+.voltar{
+text-align:center;
+margin-top:40px;
 }
 
-.light .navbar{
-background:rgba(255,255,255,0.8);
-}
-
-.light .navbar a{
-color:#020617;
-}
-
-.light #temaBtn{
-color:#020617;
-}
-
-.light .card{
-background:white;
-}
-
-.light .icones a{
-color:#020617;
+.voltar a{
+color:#38bdf8;
+font-weight:bold;
+text-decoration:none;
 }
 
 </style>
@@ -202,37 +195,26 @@ color:#020617;
 
 <nav class="navbar">
 
-<a href="#home">Home</a>
+<div class="logo">Thomas</div>
+
+<div class="menu-toggle" id="menu-toggle">
+<i class="fa-solid fa-bars"></i>
+</div>
+
+<div class="nav-links" id="nav-links">
 <a href="#projetos">Projetos</a>
 <a href="#skills">Skills</a>
 <a href="#contato">Contato</a>
-
-<button id="temaBtn">
-<i class="fa-solid fa-moon"></i>
-</button>
+</div>
 
 </nav>
 
-<header id="home">
+<header id="topo">
 
-<img src="https://i.imgur.com/4Z7DzYB.png" class="foto">
-
-<h1 id="nome"></h1>
-
-<p>Futuro Desenvolvedor</p>
+<h1>Thomas Chauar</h1>
+<p>Estudante de Desenvolvimento de Sistemas</p>
 
 </header>
-
-<section>
-
-<h2>Sobre mim</h2>
-
-<p>
-Estou começando minha jornada na programação estudando desenvolvimento de sistemas.
-Meu objetivo é evoluir constantemente e criar projetos profissionais.
-</p>
-
-</section>
 
 <section id="projetos">
 
@@ -250,11 +232,6 @@ Meu objetivo é evoluir constantemente e criar projetos profissionais.
 <p>Projeto em desenvolvimento.</p>
 </div>
 
-<div class="card">
-<h3>Projeto 3</h3>
-<p>Em breve.</p>
-</div>
-
 </div>
 
 </section>
@@ -266,22 +243,26 @@ Meu objetivo é evoluir constantemente e criar projetos profissionais.
 <div class="skill">
 <p>HTML</p>
 <div class="barra">
-<div class="progresso" data-width="90%"></div>
+<div class="progresso" style="width:90%"></div>
 </div>
 </div>
 
 <div class="skill">
 <p>CSS</p>
 <div class="barra">
-<div class="progresso" data-width="80%"></div>
+<div class="progresso" style="width:80%"></div>
 </div>
 </div>
 
 <div class="skill">
 <p>JavaScript</p>
 <div class="barra">
-<div class="progresso" data-width="65%"></div>
+<div class="progresso" style="width:60%"></div>
 </div>
+</div>
+
+<div class="voltar">
+<a href="#topo">↑ Voltar ao topo</a>
 </div>
 
 </section>
@@ -292,15 +273,15 @@ Meu objetivo é evoluir constantemente e criar projetos profissionais.
 
 <div class="icones">
 
-<a href="mailto:seuemail@gmail.com">
+<a href="mailto:thomaschauar010907@gmail.com">
 <i class="fa-solid fa-envelope"></i>
 </a>
 
-<a href="https://instagram.com/seuusuario" target="_blank">
+<a href="https://instagram.com/thomas_chauar" target="_blank">
 <i class="fa-brands fa-instagram"></i>
 </a>
 
-<a href="https://wa.me/5511999999999" target="_blank">
+<a href="https://wa.me/5515981795044" target="_blank">
 <i class="fa-brands fa-whatsapp"></i>
 </a>
 
@@ -308,50 +289,24 @@ Meu objetivo é evoluir constantemente e criar projetos profissionais.
 
 </section>
 
-<a class="whatsapp" href="https://wa.me/5511999999999" target="_blank">
+<a class="whatsapp" href="https://wa.me/5515981795044" target="_blank">
 <i class="fa-brands fa-whatsapp"></i>
 </a>
 
 <script>
 
-/* DIGITAR NOME */
+/* MENU MOBILE */
 
-const nome="Thomas Chauar";
-let i=0;
+const toggle = document.getElementById("menu-toggle");
+const links = document.getElementById("nav-links");
 
-function escrever(){
-if(i<nome.length){
-document.getElementById("nome").innerHTML+=nome.charAt(i);
-i++;
-setTimeout(escrever,90);
-}
-}
+toggle.onclick = () => {
+links.classList.toggle("active");
+};
 
-escrever();
+/* SCROLL SUAVE */
 
-/* ANIMAÇÃO AO SCROLL */
-
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-
-entry.target.classList.add("show");
-
-entry.target.querySelectorAll(".progresso").forEach(bar=>{
-bar.style.width=bar.dataset.width;
-});
-
-}
-});
-});
-
-document.querySelectorAll("section").forEach(sec=>{
-observer.observe(sec);
-});
-
-/* SCROLL SUAVE NAVBAR */
-
-document.querySelectorAll(".navbar a").forEach(link => {
+document.querySelectorAll(".nav-links a").forEach(link => {
 
 link.addEventListener("click", function(e){
 
@@ -360,25 +315,20 @@ e.preventDefault();
 const id = this.getAttribute("href");
 const section = document.querySelector(id);
 
-const top = section.offsetTop - 80;
-
 window.scrollTo({
-top: top,
+top: section.offsetTop - 70,
 behavior: "smooth"
 });
 
-});
+links.classList.remove("active");
 
 });
 
-/* DARK MODE */
-
-document.getElementById("temaBtn").onclick=()=>{
-document.body.classList.toggle("light");
-}
+});
 
 </script>
 
 </body>
 
 </html>
+```

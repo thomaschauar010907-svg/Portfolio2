@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfólio Thomas</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#020617;
+color:white;
+text-align:center;
+overflow-x:hidden;
+transition:0.4s;
+}
+
+#particles-js{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+background:#020617;
+padding:15px;
+display:flex;
+justify-content:center;
+gap:40px;
+z-index:1000;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+#temaBtn{
+background:none;
+border:none;
+color:white;
+font-size:20px;
+cursor:pointer;
+}
+
+header{
+padding-top:120px;
+}
+
+.foto{
+width:150px;
+border-radius:50%;
+border:4px solid #38bdf8;
+}
+
+section{
+padding:80px 20px;
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+section.mostrar{
+opacity:1;
+transform:translateY(0);
+}
+
+.container{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+}
+
+.card{
+background:#1e293b;
+padding:30px;
+width:250px;
+border-radius:15px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.07);
+box-shadow:0 25px 50px rgba(0,0,0,0.7);
+}
+
+.skill{
+width:300px;
+text-align:left;
+margin:20px auto;
+}
+
+.skill span{
+font-weight:bold;
+}
+
+.barra{
+background:#1e293b;
+border-radius:10px;
+overflow:hidden;
+}
+
+.progresso{
+height:12px;
+width:0%;
+background:linear-gradient(90deg,#38bdf8,#22c55e);
+transition:2s;
+}
+
+.icones{
+display:flex;
+justify-content:center;
+gap:40px;
+margin-top:30px;
+}
+
+.icones a{
+font-size:40px;
+color:white;
+transition:0.3s;
+}
+
+.icones a:hover{
+color:#38bdf8;
+transform:scale(1.3);
+}
+
+.whatsapp{
+position:fixed;
+bottom:30px;
+right:30px;
+font-size:35px;
+background:#25D366;
+color:white;
+width:60px;
+height:60px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+}
+
+/* MODO CLARO */
+
+.light{
+background:#f1f5f9;
+color:#020617;
+}
+
+.light .navbar{
+background:white;
+}
+
+.light .navbar a{
+color:#020617;
+}
+
+.light #temaBtn{
+color:#020617;
+}
+
+.light .card{
+background:white;
+color:#020617;
+}
+
+.light .icones a{
+color:#020617;
+}
+
+.light .whatsapp{
+color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+<nav class="navbar">
+
+<a href="#">Home</a>
+<a href="#projetos">Projetos</a>
+<a href="#skills">Skills</a>
+<a href="#contato">Contato</a>
+
+<button id="temaBtn">
+<i class="fa-solid fa-moon"></i>
+</button>
+
+</nav>
+
+<header>
+
+<img src="https://i.imgur.com/4Z7DzYB.png" class="foto">
+
+<h1 id="nome"></h1>
+
+<p>Futuro Desenvolvedor</p>
+
+</header>
+
+<section>
+
+<h2>Sobre mim</h2>
+
+<p>
+Estou começando minha jornada na programação e estudando desenvolvimento de sistemas.
+Meu objetivo é evoluir constantemente e me tornar um desenvolvedor profissional.
+</p>
+
+</section>
+
+<section id="projetos">
+
+<h2>Projetos</h2>
+
+<div class="container">
+
+<div class="card">
+<h3>Projeto 1</h3>
+<p>Meu primeiro projeto web.</p>
+</div>
+
+<div class="card">
+<h3>Projeto 2</h3>
+<p>Em desenvolvimento.</p>
+</div>
+
+<div class="card">
+<h3>Projeto 3</h3>
+<p>Em breve.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2>Skills</h2>
+
+<div class="skill">
+<span>HTML</span>
+<div class="barra">
+<div class="progresso" data-width="90%"></div>
+</div>
+</div>
+
+<div class="skill">
+<span>CSS</span>
+<div class="barra">
+<div class="progresso" data-width="80%"></div>
+</div>
+</div>
+
+<div class="skill">
+<span>JavaScript</span>
+<div class="barra">
+<div class="progresso" data-width="65%"></div>
+</div>
+</div>
+
+</section>
+
+<section id="contato">
+
+<h2>Contato</h2>
+
+<div class="icones">
+
+<a href="mailto:thomaschauar010907@gmail.com">
+<i class="fa-solid fa-envelope"></i>
+</a>
+
+<a href="https://www.instagram.com/thomas_chauar/" target="_blank">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="https://wa.me/5515981795044" target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+</div>
+
+</section>
+
+<a class="whatsapp" href="https://wa.me/5515981795044" target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+
+const nome = "Thomas Chauar";
+let i = 0;
+
+function escrever(){
+if(i < nome.length){
+document.getElementById("nome").innerHTML += nome.charAt(i);
+i++;
+setTimeout(escrever,100);
+}
+}
+escrever();
+
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+
+entry.target.classList.add("mostrar");
+
+entry.target.querySelectorAll(".progresso").forEach(bar=>{
+bar.style.width = bar.dataset.width;
+});
+
+}
+});
+});
+
+document.querySelectorAll("section").forEach(sec=>{
+observer.observe(sec);
+});
+
+const botaoTema = document.getElementById("temaBtn");
+
+botaoTema.addEventListener("click",()=>{
+document.body.classList.toggle("light");
+});
+
+tsParticles.load("particles-js",{
+particles:{
+number:{value:120},
+color:{value:"#38bdf8"},
+links:{
+enable:true,
+distance:150,
+color:"#38bdf8"
+},
+move:{speed:2},
+size:{value:{min:1,max:4}}
+},
+interactivity:{
+events:{
+onHover:{enable:true,mode:"repulse"},
+onClick:{enable:true,mode:"push"}
+}
+}
+});
+
+</script>
+
+</body>
+
+</html>

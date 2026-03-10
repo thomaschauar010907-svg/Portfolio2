@@ -12,6 +12,14 @@
 
 <style>
 
+/* SCROLL SUAVE */
+
+html{
+scroll-behavior:smooth;
+}
+
+/* BODY */
+
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
@@ -149,7 +157,7 @@ color:#38bdf8;
 transform:scale(1.2);
 }
 
-/* WHATSAPP */
+/* BOTÃO WHATSAPP */
 
 .whatsapp{
 position:fixed;
@@ -328,7 +336,7 @@ setTimeout(escrever,90);
 
 escrever();
 
-/* ANIMAÇÃO DAS SEÇÕES */
+/* ANIMAÇÃO AO SCROLL */
 
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
@@ -346,24 +354,6 @@ bar.style.width=bar.dataset.width;
 
 document.querySelectorAll("section").forEach(sec=>{
 observer.observe(sec);
-});
-
-/* SMOOTH SCROLL NAVBAR */
-
-document.querySelectorAll('.navbar a').forEach(link=>{
-
-link.addEventListener('click',function(e){
-
-e.preventDefault();
-
-const target=document.querySelector(this.getAttribute("href"));
-
-target.scrollIntoView({
-behavior:"smooth"
-});
-
-});
-
 });
 
 /* DARK MODE */

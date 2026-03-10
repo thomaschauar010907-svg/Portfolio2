@@ -12,10 +12,6 @@
 
 <style>
 
-html{
-scroll-behavior:smooth;
-}
-
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
@@ -35,7 +31,7 @@ justify-content:center;
 gap:40px;
 padding:18px;
 backdrop-filter:blur(10px);
-background:rgba(2,6,23,0.6);
+background:rgba(2,6,23,0.7);
 z-index:1000;
 }
 
@@ -74,10 +70,6 @@ border:4px solid #38bdf8;
 h1{
 font-size:42px;
 margin:10px 0;
-}
-
-.sub{
-opacity:0.7;
 }
 
 /* SECTIONS */
@@ -157,7 +149,7 @@ color:#38bdf8;
 transform:scale(1.2);
 }
 
-/* BOTÃO WHATSAPP */
+/* WHATSAPP */
 
 .whatsapp{
 position:fixed;
@@ -182,7 +174,7 @@ color:#020617;
 }
 
 .light .navbar{
-background:rgba(255,255,255,0.7);
+background:rgba(255,255,255,0.8);
 }
 
 .light .navbar a{
@@ -209,7 +201,7 @@ color:#020617;
 
 <nav class="navbar">
 
-<a href="#">Home</a>
+<a href="#home">Home</a>
 <a href="#projetos">Projetos</a>
 <a href="#skills">Skills</a>
 <a href="#contato">Contato</a>
@@ -220,13 +212,13 @@ color:#020617;
 
 </nav>
 
-<header>
+<header id="home">
 
 <img src="https://i.imgur.com/4Z7DzYB.png" class="foto">
 
 <h1 id="nome"></h1>
 
-<p class="sub">Futuro Desenvolvedor</p>
+<p>Futuro Desenvolvedor</p>
 
 </header>
 
@@ -236,7 +228,7 @@ color:#020617;
 
 <p>
 Estou começando minha jornada na programação estudando desenvolvimento de sistemas.
-Meu objetivo é evoluir constantemente e construir projetos profissionais.
+Meu objetivo é evoluir constantemente e criar projetos profissionais.
 </p>
 
 </section>
@@ -336,11 +328,10 @@ setTimeout(escrever,90);
 
 escrever();
 
-/* SCROLL ANIMATION */
+/* ANIMAÇÃO DAS SEÇÕES */
 
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
-
 if(entry.isIntersecting){
 
 entry.target.classList.add("show");
@@ -350,12 +341,29 @@ bar.style.width=bar.dataset.width;
 });
 
 }
-
 });
 });
 
 document.querySelectorAll("section").forEach(sec=>{
 observer.observe(sec);
+});
+
+/* SMOOTH SCROLL NAVBAR */
+
+document.querySelectorAll('.navbar a').forEach(link=>{
+
+link.addEventListener('click',function(e){
+
+e.preventDefault();
+
+const target=document.querySelector(this.getAttribute("href"));
+
+target.scrollIntoView({
+behavior:"smooth"
+});
+
+});
+
 });
 
 /* DARK MODE */
